@@ -63,3 +63,33 @@ html(lang=require("./constants/site.js").lang)
           .modal-body
             iframe(src="", frameborder="0", height="300", width="100%", allowfullscreen)  
 
+    //- PHOTO GALLERY
+    section.Gallery.py-5
+      .container
+        h1.text-center Photo Gallery
+        p.text-center.mb-3 Check out our photos
+        .row.mb-4
+          for term in ["water", "clouds", "trees"]
+            .col-md-4
+              a(data-gallery="img-gallery", data-height="560", data-toggle="lightbox", data-width="560", href=`https://source.unsplash.com/560x560/?${term}`)
+                img.img-fluid(src=`https://source.unsplash.com/560x560/?${term}`, alt="Unsplash Random") 
+        .row.mb-4
+          for term in ["mountains", "sand", "animals"]
+            .col-md-4
+              a(data-gallery="img-gallery", data-height="560", data-toggle="lightbox", data-width="560", href=`https://source.unsplash.com/560x560/?${term}`)
+                img.img-fluid(src=`https://source.unsplash.com/560x560/?${term}`, alt="Unsplash Random") 
+
+    //- NEWSLETTER
+    section.Newsletter.text-center.p-5.bg-dark.text-white
+      .container
+        .row
+          .col
+            h1.mb-1 Sign Up For Our Newsletter
+            p.mb-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quas itaque quae nisi ullam optio quod commodi molestiae quia veniam!
+            form.form-inline.justify-content-center
+              input.form-control.form-control-lg.mb-2.mr-2(type="text", placeholder="Enter Name")
+              input.form-control.form-control-lg.mb-2.mr-2(type="email", placeholder="Enter Email")
+              button.btn.btn-primary.mb-2.btn-lg(type='submit') Submit
+    
+    //- FOOTER - pug/includes/footer.pug
+    +footer
