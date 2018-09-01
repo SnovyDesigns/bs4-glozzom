@@ -1,5 +1,5 @@
 mixin main-nav(site)
-  nav#main-nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+  nav#main-nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.py-1
       .container
         a.navbar-brand(href="index.html") Glozzom
         button.navbar-toggler(data-target="#navbarCollapse" data-toggle="collapse")
@@ -9,4 +9,4 @@ mixin main-nav(site)
             for name in ["home", "about-us", "services", "blog", "contact"]
               - const Name = require("./utils/menuName.js");
               li.nav-item(class=`${site == name ? "active" : ""}`)
-                a.nav-link(href=`${name}.html`)= Name(name)
+                a.nav-link(href=`${name == 'home' ? "index" : name}.html`)= Name(name)

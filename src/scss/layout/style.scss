@@ -87,6 +87,26 @@ nav.navbar {
   }
 }
 
+.PageHeader {
+  height: 30rem;
+  background: iurl('image1.jpg') no-repeat 0 -36rem;
+  background-attachment: fixed;
+  color: #ffffff;
+  border-bottom: 0.1rem solid #000;
+}
+
+.About {
+  img {
+    border: 0.2rem solid rgba($color: #2c3e50, $alpha: 0.2);
+    box-shadow: 1rem 1rem 2rem rgba($color: #000000, $alpha: 0.2);
+    margin-top: -5rem;
+  }
+}
+
+.Footer {
+  background: #000;
+}
+
 @media (max-width: 575px) {
   .carousel-caption {
     h1 {

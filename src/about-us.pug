@@ -1,8 +1,27 @@
+include ./pug/main
+
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title 
+html(lang=require("./constants/site.js").lang)
+  +head('about-us')
+  
   body
+
+    //- MAIN NAV - pug/includes/main-nav.pug
+    +main-nav('about-us')
+
+    //- PAGE HEADER - pug/includes/page-header.pug
+    +page-header('About Us')
+
+    //- ABOUT SECTION
+    section.About.py-3
+      .container
+        .row
+            .col-md-6.align-self-center
+              h1.mb-2 What We Do
+              p.mb-1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, aliquam deserunt? Nobis modi ullam ad laudantium velit optio libero, eius unde autem quos? Soluta, aliquid aut reprehenderit cupiditate quia similique laborum ratione officiis corrupti debitis dignissimos tempore et provident optio, inventore iure, saepe libero illo corporis ea magnam! Qui, ipsum!
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit temporibus blanditiis odio illum cupiditate totam eos tempora animi ex reiciendis delectus perferendis molestias qui quod dolor, iusto quibusdam laborum consequatur distinctio. Deleniti vitae beatae consectetur delectus possimus, nemo placeat quas ad optio quaerat iusto aliquam voluptatum atque quod maiores dignissimos!
+            .col-md-5.offset-md-1
+              img.img-fluid.rounded-circle.d-none.d-md-block(src="https://source.unsplash.com/random/600x600/?technology")
+
+    //- FOOTER - pug/includes/footer.pug
+    +footer

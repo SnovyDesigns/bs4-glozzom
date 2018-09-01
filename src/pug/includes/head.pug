@@ -1,14 +1,14 @@
 - let site = require("./constants/site.js");
 
 mixin head(site)
-    head
-      meta(charset="UTF-8")
-      meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      meta(http-equiv="X-UA-Compatible", content="ie=edge")
-      - const Name = require("./utils/menuName.js")
-      if site != undefined
-        title= `Glozzom | ${Name(site)}`
-      else  
-        title Glozzom
-      meta(name="decription" content=require("./constants/site.js").description)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    - const Name = require("./utils/menuName.js")
+    if site != undefined
+      title= `Glozzom | ${Name(site)}`
+    else  
+      title Glozzom
+    meta(name="decription" content=require("./constants/site.js").description)
   
