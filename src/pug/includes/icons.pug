@@ -1,0 +1,14 @@
+//- Values:
+//- icon - icon classes
+//- header - header text
+//- lead - paragraph text
+
+mixin icons(icons)
+  .container
+    .row
+      for item, index in icons
+        .col-md-4.mb-3.text-center
+          i.mb-2(class=`${item.icon}`)
+          h4.mb-1= `${item.header != undefined ? item.header : "Sample Header"}`
+          p
+            = `${item.lead != undefined ? item.lead : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, ducimus."}`

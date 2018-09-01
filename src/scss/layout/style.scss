@@ -6,7 +6,6 @@ html {
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.7rem;
 }
 
 nav.navbar {
@@ -20,8 +19,14 @@ nav.navbar {
     .nav-link {
       font-size: 1.5rem;
       text-transform: uppercase;
-      padding-left: 1.6rem;
-      padding-right: 1.6rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .nav-item:last-of-type {
+      .nav-link {
+        padding-right: 0;
+      }
     }
   }
 }
@@ -29,11 +34,6 @@ nav.navbar {
 .Showcase {
   .carousel-item {
     height: 45rem;
-  }
-
-  p,
-  .btn {
-    font-size: 1.8rem;
   }
 
   .image0 {
@@ -49,6 +49,24 @@ nav.navbar {
   .image2 {
     background: iurl('image2.jpg');
     background-size: cover;
+  }
+}
+
+.HomeHeading {
+  min-height: 20rem;
+  position: relative;
+  background: iurl('lights.jpg') no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: #ffffff;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
   }
 }
 
