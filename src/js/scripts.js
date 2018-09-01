@@ -27,6 +27,12 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
   $(this).ekkoLightbox();
 });
 
+$('.slider').slick({
+  infinite: true,
+  slideToShow: 1,
+  slideToScroll: 1
+});
+
 $('#year').text(new Date().getFullYear());
 
 $('body').scrollspy({ target: '#main-nav', offset: xxx });

@@ -13,7 +13,7 @@ html(lang=require("./constants/site.js").lang)
     +page-header('About Us')
 
     //- ABOUT SECTION
-    section.About.py-3
+    section.About.pt-3.pb-5
       .container
         .row
             .col-md-6.align-self-center
@@ -22,6 +22,29 @@ html(lang=require("./constants/site.js").lang)
               p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit temporibus blanditiis odio illum cupiditate totam eos tempora animi ex reiciendis delectus perferendis molestias qui quod dolor, iusto quibusdam laborum consequatur distinctio. Deleniti vitae beatae consectetur delectus possimus, nemo placeat quas ad optio quaerat iusto aliquam voluptatum atque quod maiores dignissimos!
             .col-md-5.offset-md-1
               img.img-fluid.rounded-circle.d-none.d-md-block(src="https://source.unsplash.com/random/600x600/?technology")
+
+    //- ICON BOXES
+    section.IconBoxes.p-5.border.border-top.border-bottom.border-light
+      - const icons = [{icon: "fal fa-box fa-3x"},{icon: "fal fa-clipboard-check fa-3x"},{icon: "fal fa-dolly-flatbed-alt fa-3x"},{icon: "fal fa-scanner-keyboard fa-3x"},{icon: "fal fa-shipping-timed fa-3x"},{icon: "fal fa-warehouse fa-3x"}];
+
+      //- pug/includes/icon-boxes.pug
+      +icon-boxes(icons)
+
+    //- TESTIMONIALS
+    section.Testimonials.p-4.bg-dark.text-white
+      .container
+        h1.text-center.mb-2 Testimonials
+        .row.text-center
+          .col
+            .slider
+              for client, index in ["John Doe", "Sam Smith", "Kristin Doyle"]
+                div
+                  span.display-2 &rsquo;&rsquo;
+                  blockquote.blockquote
+                    p.mb-0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, eius!
+                    footer.blockquote-footer #{client} From 
+                      cite(title="Company 1")= `Company ${index + 1}`
+                  span.display-2 &sbquo;&sbquo;
 
     //- FOOTER - pug/includes/footer.pug
     +footer

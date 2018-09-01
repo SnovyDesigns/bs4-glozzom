@@ -1,0 +1,16 @@
+//- Values:
+//- icon - icon classes
+//- header - header text
+//- lead - paragraph text
+
+mixin icon-boxes(icons)
+  .container
+    .row
+      for item, index in icons
+        .col-md-4.mb-3.text-center
+          .card.text-center(class=`${index % 2 == 0 ? "bg-danger text-white" : "border border-dark text-dark"}`)
+            .card-body
+              i.mb-2(class=`${item.icon}`)
+              h4.mb-1= `${item.header != undefined ? item.header : "Sample Header"}`
+              p
+                = `${item.lead != undefined ? item.lead : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, ducimus."}`
