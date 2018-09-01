@@ -1,5 +1,10 @@
 import $ from 'jquery';
 
+$('carousel').carousel({
+  interval: 6000,
+  pause: 'hover'
+});
+
 $('#year').text(new Date().getFullYear());
 
 $('body').scrollspy({ target: '#main-nav', offset: xxx });

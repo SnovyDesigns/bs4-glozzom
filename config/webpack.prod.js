@@ -124,8 +124,8 @@ module.exports = env => {
         template: './src/index.pug'
       }),
       new HTMLWebpackPlugin({
-        filename: 'about.html',
-        template: './src/about.pug'
+        filename: 'about-us.html',
+        template: './src/about-us.pug'
       }),
       new HTMLWebpackPlugin({
         filename: 'services.html',

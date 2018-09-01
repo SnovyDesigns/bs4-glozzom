@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.7rem;
+}
+
+nav.navbar {
+  .navbar-brand {
+    font-size: 1.8rem;
+  }
+  .navbar-nav {
+    .nav-item.active {
+      border-left: 0.3rem solid #444;
+    }
+    .nav-link {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+    }
+  }
+}
+
+.Showcase {
+  .carousel-item {
+    height: 45rem;
+  }
+
+  p,
+  .btn {
+    font-size: 1.8rem;
+  }
+
+  .image0 {
+    background: iurl('image0.jpg');
+    background-size: cover;
+  }
+
+  .image1 {
+    background: iurl('image1.jpg');
+    background-size: cover;
+  }
+
+  .image2 {
+    background: iurl('image2.jpg');
+    background-size: cover;
+  }
+}
+
+@media (max-width: 575px) {
+  .carousel-caption {
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+    }
+  }
+}

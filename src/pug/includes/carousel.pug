@@ -1,0 +1,30 @@
+//- Values:
+//- heading - header text
+//- lead - paragraph text
+//- button - button text
+//- align - for text-align in carousel-caption
+//- color - for btn-color
+
+mixin carousel(slides)
+  #myCarousel.carousel.slide(data-ride="carousel")
+        ol.carousel-indicators
+          for slide, index in slides
+            li(class=`${index == 0 ? "active" : ""}`, data-slide-to=index, data-target="#myCarousel")
+        .carousel-inner
+          for slide, index in slides
+            .carousel-item(class=`image${index}`, class=`${index == 0 ? "active" : ""}`)
+              .container.h-100
+                .carousel-caption.mb-5(class=`text-${slide.align != undefined ? slide.align : "left"}`)
+                  h1.display-2.mb-3
+                    = `${slide.heading != undefined ? slide.heading : "Simple heading"}`
+                  .d-none.d-sm-block
+                    p.lead.mb-5
+                      = `${slide.lead != undefined ? slide.lead : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, ducimus."}`
+                    if slide.button != undefined
+                      a.btn.btn-lg.text-uppercase(class=`btn-${slide.color != undefined ? slide.color : "primary"}`, href="#") #{slide.button}
+        a.carousel-control-prev(data-slide="prev", href="#myCarousel")
+          span.carousel-control-prev-icon
+        a.carousel-control-next(data-slide="next", href="#myCarousel")
+          span.carousel-control-next-icon
+
+                  
