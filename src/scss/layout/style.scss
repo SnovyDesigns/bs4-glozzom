@@ -53,13 +53,30 @@ nav.navbar {
 }
 
 .HomeHeading {
-  min-height: 20rem;
   position: relative;
+  min-height: 20rem;
   background: iurl('lights.jpg') no-repeat;
   background-attachment: fixed;
   text-align: center;
   color: #ffffff;
+}
 
+.Video {
+  position: relative;
+  min-height: 22rem;
+  background: iurl('media.jpg') no-repeat;
+  background-attachment: fixed;
+  background-position: -20rem 0;
+  text-align: center;
+  color: #ffffff;
+
+  .video {
+    color: #ffffff;
+  }
+}
+
+.HomeHeading,
+.Video {
   .overlay {
     position: absolute;
     top: 0;

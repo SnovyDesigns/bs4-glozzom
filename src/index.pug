@@ -26,9 +26,9 @@ html(lang=require("./constants/site.js").lang)
     //- HOME HEADING
     section.HomeHeading.p-5
       .overlay
-        .row
-          .col
-            .container.pt-5
+        .container
+          .row
+            .col.pt-5
               h1.mb-2 Are You Ready To Get Started?
               p.d-none.d-md-block Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aspernatur impedit aut ab qui, praesentium dolor sequi atque voluptas a.
 
@@ -43,4 +43,23 @@ html(lang=require("./constants/site.js").lang)
           .col-md-6
             img.img-fluid(src=require("./images/laptop.png"))
 
+    //- VIDEO PLAY
+    section.Video
+      .overlay
+        .container
+          .row
+            .col.p-5
+              a.video(data-target="#videoModal", data-toggle="modal", data-video="https://www.youtube.com/embed/5GcQtLDGXy8", href="#")
+                i.fas.fa-play.fa-3x
+              h1.mt-3 See What We Do ! 
     
+    //- VIDEO MODAL
+    #videoModal.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(data-dismiss="modal")
+              span &times;
+          .modal-body
+            iframe(src="", frameborder="0", height="300", width="100%", allowfullscreen)  
+
