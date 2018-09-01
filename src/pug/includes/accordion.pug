@@ -1,0 +1,13 @@
+mixin accordion(values)
+  - const Word = require("./utils/numberToWord.js");
+  - const Name = require("./utils/menuName.js");
+    #accordion
+      for value, index in values
+        .card
+          .card-header
+            h5.mb-0
+              a(data-parent="#accordion", data-toggle="collapse", href=`#${value.header}`)
+                = `${value.header != undefined ? Name(value.header) : `Question ${Word(index+1)}`}`
+          .collapse(id=`${value.header}`)
+            .card-body Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia sunt eum saepe vero accusamus sit mollitia, illum minus voluptates vel rem! Aspernatur hic ad voluptas.
+

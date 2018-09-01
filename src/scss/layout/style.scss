@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+$boxshadow: 1rem 1rem 2rem
+  rgba(
+    $color: #000000,
+    $alpha: 0.2
+  );
+
 html {
   font-size: 62.5%;
 }
@@ -99,8 +105,35 @@ nav.navbar {
 .About {
   img {
     border: 0.2rem solid rgba($color: #2c3e50, $alpha: 0.2);
-    box-shadow: 1rem 1rem 2rem rgba($color: #000000, $alpha: 0.2);
+    box-shadow: $boxshadow;
     margin-top: -5rem;
+  }
+}
+
+.Services {
+  .box-shadow {
+    box-shadow: $boxshadow;
+  }
+}
+
+.Faq {
+  .card {
+    border: 0.1rem solid #444;
+    background: transparent;
+  }
+
+  .card-header,
+  .card-body {
+    background: #ecf0f1;
+  }
+
+  a {
+    color: #222f3e;
+    text-decoration: none;
+  }
+
+  .card-body {
+    color: #222f3e;
   }
 }
 

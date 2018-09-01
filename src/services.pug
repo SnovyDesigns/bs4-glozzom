@@ -1,8 +1,43 @@
+include ./pug/main
+
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title 
+html(lang=require("./constants/site.js").lang)
+  +head('services')
+  
   body
+
+    //- MAIN NAV - pug/includes/main-nav.pug
+    +main-nav('services')
+
+    //- PAGE HEADER - pug/includes/page-header.pug
+    +page-header('Services')
+
+    //- SERVICES SECTION
+    section.Services.py-5
+      - const boxes = [{header: "Basic"}, {header: "Standard"}, {header: "Premium"}];
+
+      //- pug/includes/price-boxes.pug
+      +price-boxes(boxes)
+
+    //- FAQ
+    section.Faq.p-5.bg-dark.text-white
+      .container
+        h1.text-center.mb-3 Frequently Asked Questions
+        .row
+          .col-md-6
+            - const values1 = [{header: "general"}, {header: "programming"}, {header: "support"}];
+
+            //- pug/includes/accordion.pug
+            +accordion(values1)
+          
+          .col-md-6
+            - const values2 = [{header: "photoshop"}, {header: "illustrator"}, {header: "sketch"}];
+
+            //- pug/includes/accordion.pug
+            +accordion(values2)
+
+
+
+
+    //- FOOTER - pug/includes/footer.pug
+    +footer

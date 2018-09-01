@@ -1,0 +1,24 @@
+mixin price-boxes(boxes)
+  .container
+    .row
+      for box, index in boxes
+        - const Word = require("./utils/numberToWord.js");
+        .col-md-4
+          .card.text-center(class=`${index == 1 ? "box-shadow" : ""}`)
+            .card-header.text-white(class=`${index == 1 ? "bg-success" : "bg-primary"}`)
+              h3= `${box.header != undefined ? box.header : `Super Plan ${Word(index+1)}`}`
+            .card-body
+              h4.card-title.mb-2
+                span $
+                strong= `${box.price != undefined ? box.price : `${index+1}9.99`}`
+              p.card-text.mb-2 Lorem ipsum dolor sit amet.
+              ul.list-group
+                for n in [1,2,3,4,5]
+                  li.list-group-item
+                    i.fal.fa-check-square.mr-1
+                    = `Feature ${Word(n)}` 
+              a.btn.btn-block.mt-2(class=`${index == 1 ? "btn-primary" : "btn-success"}`, href="#") Get It
+            .card-footer.text-muted 1 Year Plan
+              
+
+  
