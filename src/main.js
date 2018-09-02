@@ -5,3 +5,7 @@ import 'bootstrap/js/dist/collapse';
 import './js/ekko-lightbox';
 import './js/slick';
 import './js/scripts';
+import './images/person1.jpg';
+import './images/person2.jpg';
+import './images/person3.jpg';
+import './images/person4.jpg';
