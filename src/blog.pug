@@ -1,8 +1,30 @@
+include ./pug/main
+
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title 
+html(lang=require("./constants/site.js").lang)
+  +head('blog')
+  
   body
+
+    //- MAIN NAV - pug/includes/main-nav.pug
+    +main-nav('blog')
+
+    //- PAGE HEADER - pug/includes/page-header.pug
+    +page-header('Blog')
+
+    //- BLOG SECTION
+    section.Blog.py-5
+      .container
+        .row
+          .col
+            .card-columns
+              - const cards = [{image: "nature", title: "Blog Post One", subtitle: "Written by Jeff on 05/20"}, {}, {image: "sea", title: "Blog Post Two", subtitle: "Written by Ann on 05/22"}, {class: "red"}, {image: "beach", title: "Blog Post Three", subtitle: "Written by Mark on 05/25"}, {}];
+
+              for card, index in cards
+                if index % 2 == 0
+                  +card(card)
+                else
+                  +card-bq(card)
+
+    //- FOOTER - pug/includes/footer.pug
+    +footer

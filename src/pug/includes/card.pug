@@ -1,0 +1,11 @@
+mixin card(card)
+  .card
+    if card.image != undefined
+      img.img-fluid.card-img-top(src=`https://source.unsplash.com/300x200/?${card.image}`)
+    .card-body
+      if card.title != undefined
+        h4.card-title #{card.title}
+      if card.subtitle != undefined
+        small.text-muted #{card.subtitle}
+        hr
+      p.card-text= `${card.text != undefined ? card.text : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime repellat doloremque expedita praesentium dignissimos, quos iste nobis, fugiat minima aliquam soluta facere reiciendis voluptate numquam."}` 

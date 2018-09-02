@@ -141,6 +141,19 @@ nav.navbar {
   background: #222f3e;
 }
 
+.Blog {
+  .red {
+    background: #e74c3c;
+    color: #ffffff;
+
+    .blockquote-footer,
+    small,
+    cite {
+      color: #ecf0f1 !important;
+    }
+  }
+}
+
 @media (max-width: 575px) {
   .carousel-caption {
     h1 {

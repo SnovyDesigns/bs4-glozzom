@@ -1,0 +1,8 @@
+mixin card-bq(card)
+  .card.p-3(class=`${card.class != undefined ? card.class : ""}`)
+    blockquote.card-body
+      p= `${card.blockquote != undefined ? card.blockquote : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime repellat doloremque expedita praesentium dignissimos."}`
+      footer.blockquote-footer
+        small.text-muted Someone Famous in 
+          cite(title="Source Title") Source Title
+  
