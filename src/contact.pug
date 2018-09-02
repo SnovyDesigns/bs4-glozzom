@@ -1,8 +1,69 @@
+include ./pug/main
+
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title 
+html(lang=require("./constants/site.js").lang)
+  +head('contact')
+  
   body
+
+    //- MAIN NAV - pug/includes/main-nav.pug
+    +main-nav('contact')
+
+    //- PAGE HEADER - pug/includes/page-header.pug
+    +page-header('Contact Us')
+
+    //- CONTACT SECTION
+    section.Contact.py-3
+      .container
+        .row
+          .col-md-4.mb-3.mb-md-0
+            .card.p-3
+              .card-body
+                h4 Get In Touch
+                p.mb-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ea.
+                h4 Address
+                p 550 Main st, BOSTON MA
+                h4 Email
+                p test@test.com
+                h4 Phone
+                p (555) 555-1234
+          .col-md-8  
+            .card.p-3
+              .card-body
+                h3.text-center Please fill out this form to contact us
+                hr
+                .row.mt-2
+                  .col-md-6
+                    .form-group
+                      input.form-control(type="text", placeholder="First Name")
+                  .col-md-6
+                    .form-group
+                      input.form-control(type="text", placeholder="Last Name")
+                  .col-md-6
+                    .form-group
+                      input.form-control(type="email", placeholder="Email")
+                  .col-md-6
+                    .form-group
+                      input.form-control(type="number", min="1", max="10", placeholder="Phone Number")
+                .row
+                  .col-md-12
+                    .form-group
+                      textarea.form-control(type="text", placeholder="Message")
+                  .col-md-12
+                    button.btn.btn-outline-success.btn-block.mt-2(type='submit') Submit
+    
+    //- STAFF
+    section.Staff.py-5.text-center.bg-dark.text-white
+      .container
+        h1.mb-3 Out Staff
+        .row
+          - const workers = {"Marketing Manager": "Susan Williams", "Business Manager": "Grace Smith", "CEO": "John Doe", "Web Developer": "Kevin Swanson"};
+          - let i = 1;
+          for worker, job in workers
+            .col-md-3.mb-3.mb-md-0
+              img.img-fluid.rounded-circle.mb-3(src=require(`./images/person${i++}.jpg`))
+              h3 #{worker}
+              small #{job}
+
+    //- FOOTER - pug/includes/footer.pug
+    +footer
